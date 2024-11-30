@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     "education",
     "computer science",
   ],
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Ronish Paudel" }],
   openGraph: {
     title: "Path Visualizer",
     description: "Interactive pathfinding algorithm visualization tool",
@@ -60,6 +61,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
