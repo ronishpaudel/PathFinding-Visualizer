@@ -22,10 +22,8 @@ Experience the path finding visualizer integration in action:
   - React
   - TypeScript
   - Tailwind CSS
-  - React Hook Form
   - Toastify
-- **Backend:**
-  - Node.js (for grid configuration management)
+-
 - **UI Components:**
   - Custom-built components for Grid and UI controls
   - `@radix-ui/react-select` for dropdowns
