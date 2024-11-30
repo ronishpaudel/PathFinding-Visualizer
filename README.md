@@ -11,6 +11,11 @@ A React-based application for visualizing various pathfinding algorithms, such a
 - **State Persistence:** Save and load grid configurations.
 - **Modern UI:** Built with React and Tailwind CSS for a clean and responsive design.
 
+## Live Demo
+
+Experience the path finding visualizer integration in action:
+[Live Demo](https://path-finding-visualizer007.vercel.app/)
+
 ## Tech Stack
 
 - **Frontend:**
@@ -40,7 +45,7 @@ A React-based application for visualizing various pathfinding algorithms, such a
 Start the development server:
 
 ```bash
-npm run dev
+  npm run dev
 ```
 
 3. Open the app in your browser:
