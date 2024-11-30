@@ -74,18 +74,40 @@ export default function Grid({
     }
   };
 
+  // Calculate dynamic cell size based on grid and screen width
+  const calculateCellSize = () => {
+    const gridSize = grid.length;
+    const screenWidth = window.innerWidth;
+    const maxCellSize = 40; // Maximum cell size
+    const padding = 32; // Total padding (16px on each side)
+    const availableWidth = screenWidth - padding;
+    const cellSize = Math.min(
+      Math.floor(availableWidth / gridSize),
+      maxCellSize
+    );
+    return cellSize;
+  };
+
+  const cellSize = calculateCellSize();
+
   return (
     <div
-      className="grid gap-px"
-      style={{ gridTemplateColumns: `repeat(${grid.length}, 1fr)` }}
+      className="grid gap-[1px] w-full overflow-x-auto touch-auto"
+      style={{
+        gridTemplateColumns: `repeat(${grid.length}, ${cellSize}px)`,
+        justifyContent: "center",
+      }}
     >
       {grid.map((row, rowIndex) =>
         row.map((cell, colIndex) => (
           <div
             key={`${rowIndex}-${colIndex}`}
-            className={`w-6 h-6 border border-gray-200 ${getCellClassName(
-              cell
-            )}`}
+            className={`border border-gray-200 touch-manipulation 
+              ${getCellClassName(cell)}`}
+            style={{
+              width: `${cellSize}px`,
+              height: `${cellSize}px`,
+            }}
             onClick={() => handleCellClick(rowIndex, colIndex)}
           />
         ))
