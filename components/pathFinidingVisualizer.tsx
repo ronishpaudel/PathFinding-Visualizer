@@ -95,7 +95,7 @@ export default function PathfindingVisualizer() {
       }
     } catch (error) {
       console.error("Error fetching configurations:", error);
-      toast.error("Failed to fetch saved configurations");
+      // toast.error("Failed to fetch saved configurations");
     }
   };
 
